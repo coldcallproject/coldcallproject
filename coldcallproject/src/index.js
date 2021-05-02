@@ -3,10 +3,33 @@ import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
 import reportWebVitals from './core/reportWebVitals';
+import ProfileCardsCarousel from './components/ProfileCardsCarousel';
+import ProfileCard from './components/ProfileCard';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <ProfileCardsCarousel show={2}>
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+    </ProfileCardsCarousel>
+    <ProfileCardsCarousel show={2}>
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+    </ProfileCardsCarousel>
+    <ProfileCardsCarousel show={2}>
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+    </ProfileCardsCarousel>
   </React.StrictMode>,
   document.getElementById('root')
 );
