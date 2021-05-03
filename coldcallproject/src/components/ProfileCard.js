@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Button,
   Card,
@@ -9,39 +9,38 @@ import {
   Typography
 } from '@material-ui/core'
 import '../styles/ProfileCard.css';
-import larry from '../images/larry-page.jpeg'
 
-class ProfileCard extends Component {
-  render() {
-    return (
-      <Card className="Card-item">
-        <CardActionArea>
-          <CardMedia
-            className="Card-media"
-            image={larry}
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              Lizard
+const ProfileCard = (props) => {
+  const { name } = props
+
+  return (
+    <Card className="Card-item">
+      <CardActionArea>
+        <CardMedia
+          className="Card-media"
+          image={require(`../images/profiles/${name.toLowerCase().replace(/\s/g, '-')}.jpeg`).default}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {name}
           </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+          <Typography variant="body2" color="textSecondary" component="p">
+            {`Description for ${name} is not ready yet...\n
+              But, ${name.split(' ')[0]} is extremely enjoyable to talk to!`}
           </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          {`Buy ${name.split(' ')[0]}'s Time`}
         </Button>
-          <Button size="small" color="primary">
-            Learn More
+        <Button size="small" color="primary">
+          Learn More
         </Button>
-        </CardActions>
-      </Card>
-    )
-  }
+      </CardActions>
+    </Card>
+  )
 };
 
 export default ProfileCard;

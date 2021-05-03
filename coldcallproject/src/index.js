@@ -4,32 +4,15 @@ import './styles/index.css';
 import App from './components/App';
 import reportWebVitals from './core/reportWebVitals';
 import ProfileCardsCarousel from './components/ProfileCardsCarousel';
-import ProfileCard from './components/ProfileCard';
+import MenuAppBar from './components/core/MenuAppBar';
+
+/* <App /> */
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <ProfileCardsCarousel show={2}>
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-    </ProfileCardsCarousel>
-    <ProfileCardsCarousel show={2}>
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-    </ProfileCardsCarousel>
-    <ProfileCardsCarousel show={2}>
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-    </ProfileCardsCarousel>
+    <MenuAppBar />
+    <ProfileCardsCarousel theme="premium" />
+    <ProfileCardsCarousel theme="cartoon characters" />
   </React.StrictMode>,
   document.getElementById('root')
 );
